@@ -1,5 +1,4 @@
-
-package br.com.grupo.back;
+package e8ilab2.apiusuarios;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
