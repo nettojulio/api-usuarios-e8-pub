@@ -117,7 +117,7 @@ docker-compose up
 
 #### Dados Recebidos
 
-```
+```http
 [
   	{
 		"id": 3,
@@ -159,7 +159,7 @@ docker-compose up
 
 #### Dados Recebidos
 
-```
+```http
 {
   	"id": 1,
 	"nome":"Usuário",
