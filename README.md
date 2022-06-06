@@ -2,7 +2,7 @@
 
 ## API de usuários
 
-Uma aplicação Java API para cadastrar e listar usuários com os atributos id, nome, CPF, telefone, data nascimento e
+Uma aplicação Java API para cadastrar e listar usuários com os atributos id, nome, CPF, telefone, data de nascimento e
 email. Para utilizar esta API, esta aplicação deverá ser autenticada pela aplicação de administradores, passando o token jwt.
 
 Repositório do Front-end, clique aqui: https://github.com/equipe8-final-ilab/frontend-e8
