@@ -78,14 +78,14 @@ docker-compose up
 ```
 
 #### Dados Recebidos
-```
+```http
 {
-  "id": 1,
-  "nome":"Usuário",
-  "cpf":"11122233344",
-  "email":"usuario@email.com",
-  "telefone":"55999999999",
-  "dataNascimento":"2004-01-01T00:00:00.000+00:00"
+	"id": 1,
+	"nome":"Usuário",
+	"cpf":"11122233344",
+	"email":"usuario@email.com",
+	"telefone":"55999999999",
+	"dataNascimento":"2004-01-01T00:00:00.000+00:00"
 }
 ```
 
