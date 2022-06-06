@@ -119,7 +119,7 @@ docker-compose up
 
 ```
 [
-  {
+  	{
 		"id": 3,
 		"nome": "Julio",
 		"cpf": "12345678901",
