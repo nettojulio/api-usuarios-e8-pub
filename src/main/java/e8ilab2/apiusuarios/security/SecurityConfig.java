@@ -1,8 +1,6 @@
-package e8ilab2.apipedidos.security;
+package e8ilab2.apiusuarios.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -10,8 +8,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfig extends WebSecurityConfigurerAdapter{
-
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     public void configure(HttpSecurity httpSec) throws Exception {
 
@@ -24,3 +21,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     }
 
 }
+

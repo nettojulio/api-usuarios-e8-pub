@@ -1,10 +1,10 @@
-package br.com.chocode.back;
+package e8ilab2.apiusuarios;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class BackApplicationTests {
+class ApiUsuariosApplicationTests {
 
 	@Test
 	void contextLoads() {
