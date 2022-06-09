@@ -1,18 +1,15 @@
 package e8ilab2.apiusuarios.service;
 
 import e8ilab2.apiusuarios.model.Cliente;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 public interface IClienteService {
 
-    public List<Cliente> recuperarTodos();
+    public Page<Cliente> recuperarTodos(Pageable p);
 
     public Cliente recuperarPorIdDoUsuario(Integer id);
 
     public Cliente novoUsuario(Cliente novoUsuario);
 
-    public Cliente alterarDadosUsuario(Cliente dadosAlterados, Integer id);
-
-    public Boolean deletarUsuario(Integer id);
 }

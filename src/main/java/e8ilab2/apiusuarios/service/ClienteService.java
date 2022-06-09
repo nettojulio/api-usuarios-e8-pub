@@ -3,17 +3,18 @@ package e8ilab2.apiusuarios.service;
 import e8ilab2.apiusuarios.dao.ClienteDAO;
 import e8ilab2.apiusuarios.model.Cliente;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
-public class ClienteService implements IClienteService{
+public class ClienteService implements IClienteService {
     @Autowired
     private ClienteDAO dao;
+
     @Override
-    public List<Cliente> recuperarTodos() {
-        return dao.recuperarTodos() ;
+    public Page<Cliente> recuperarTodos(Pageable p) {
+        return dao.findAll(p);
     }
 
     @Override
@@ -32,16 +33,6 @@ public class ClienteService implements IClienteService{
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return null;
-    }
-
-    @Override
-    public Cliente alterarDadosUsuario(Cliente dadosAlterados, Integer id) {
-        return null;
-    }
-
-    @Override
-    public Boolean deletarUsuario(Integer id) {
         return null;
     }
 }

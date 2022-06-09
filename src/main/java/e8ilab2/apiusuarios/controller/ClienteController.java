@@ -4,10 +4,11 @@ import e8ilab2.apiusuarios.model.Cliente;
 import e8ilab2.apiusuarios.service.IClienteService;
 import e8ilab2.apiusuarios.utils.Messages;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import static e8ilab2.apiusuarios.utils.PageableUtils.showRoom;
 
 @RestController
 public class ClienteController {
@@ -15,14 +16,11 @@ public class ClienteController {
     private IClienteService service;
 
     @GetMapping("/usuarios")
-    public ResponseEntity<?> recuperarTodos() {
-        List<Cliente> usuario = service.recuperarTodos();
-    if (usuario.size() != 0 ) {
-        return ResponseEntity.ok(service.recuperarTodos());
+    public ResponseEntity<?> recuperarTodos(@RequestParam(required = false) Integer page, @RequestParam(required = false) Integer size) {
+        Page<Cliente> clientes = service.recuperarTodos(showRoom(page, size));
+        return ResponseEntity.ok(clientes);
+    }
 
-    }
-       return null;
-    }
     @GetMapping("/usuarios/{id}")
     public ResponseEntity<?> recuperarPorIdUsuario(@PathVariable Integer id) {
         Cliente usuario = service.recuperarPorIdDoUsuario(id);
@@ -31,6 +29,7 @@ public class ClienteController {
         }
         return ResponseEntity.status(404).body(new Messages(404, "Usuario não encontrado"));
     }
+
     @PostMapping("/usuarios")
     public ResponseEntity<?> cadastrarNovoUsuario(@RequestBody Cliente novo) {
         Cliente usuario = service.novoUsuario(novo);
