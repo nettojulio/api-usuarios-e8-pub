@@ -8,26 +8,24 @@ import java.util.Date;
 public class Cliente {
 
     @Id
-    @Column( name = "id_usuario",nullable = false, columnDefinition = "SERIAL")
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_usuario", nullable = false, columnDefinition = "SERIAL")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column( name = "nome",nullable = false, length  = 50, columnDefinition = "VARCHAR")
-   private String nome ;
+    @Column(name = "nome", nullable = false, length = 50, columnDefinition = "VARCHAR")
+    private String nome;
 
+    @Column(name = "cpf", nullable = false, length = 11, unique = true, columnDefinition = "VARCHAR")
+    private String cpf;
 
-    @Column( name = "cpf",nullable = false, length = 11, columnDefinition = "VARCHAR")
-    private String cpf ;
+    @Column(name = "email", nullable = false, length = 100, unique = true, columnDefinition = "VARCHAR")
+    private String email;
 
+    @Column(name = "telefone", nullable = false, length = 12, unique = true, columnDefinition = "VARCHAR")
+    private String telefone;
 
-    @Column( name = "email",nullable = false, length = 100, columnDefinition = "VARCHAR")
-    private String email ;
-
-    @Column( name = "telefone",nullable = false, length = 12, columnDefinition = "VARCHAR")
-    private String telefone ;
-
-    @Column (name = "data_nascimento", nullable = false, columnDefinition = "DATE")
-    private Date dataNascimento ;
+    @Column(name = "data_nascimento", nullable = false, columnDefinition = "DATE")
+    private Date dataNascimento;
 
     public Integer getId() {
         return id;
@@ -75,7 +73,6 @@ public class Cliente {
 
     public void setDataNascimento(Date dataNascimento) {
         this.dataNascimento = dataNascimento;
-
     }
 
     public Cliente() {
