@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import static e8ilab2.apiusuarios.utils.PageableUtils.showRoom;
 
 @RestController
+@CrossOrigin("*")
 public class ClienteController {
     @Autowired
     private IClienteService service;
