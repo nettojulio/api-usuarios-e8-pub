@@ -2,6 +2,7 @@ package e8ilab2.apiusuarios.controller;
 
 import e8ilab2.apiusuarios.utils.Messages;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
