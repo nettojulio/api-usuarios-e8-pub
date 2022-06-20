@@ -577,6 +577,8 @@ gradle-app.setting
 # Cache do projeto
 .gradletasknamecache
 
+logs
+
 # Arquivos gerados pelo plugin Eclipse Gradle
 # Núcleo Eclipse
 # Específico para JDT (Ferramentas de Desenvolvimento Java Eclipse)
