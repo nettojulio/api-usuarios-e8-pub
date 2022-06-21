@@ -584,3 +584,4 @@ logs
 # Específico para JDT (Ferramentas de Desenvolvimento Java Eclipse)
 
 # Fim de https://www.toptal.com/developers/gitignore/api/windows,macos,linux,visualstudiocode,eclipse,intellij,intellij+all,jetbrains,jetbrains+all,maven,gradle,git,java
+.gitlab-ci.yml
