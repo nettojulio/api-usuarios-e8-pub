@@ -12,4 +12,8 @@ public interface IClienteService {
 
     public Cliente novoUsuario(Cliente novoUsuario);
 
+    public Cliente alterarDadosCliente(Cliente dadosAlterados, Integer id);
+
+    public Boolean deletarCliente(Integer id);
+
 }
