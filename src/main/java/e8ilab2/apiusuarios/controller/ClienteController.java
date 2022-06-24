@@ -39,5 +39,32 @@ public class ClienteController {
         }
         return ResponseEntity.badRequest().body(new Messages(400, "Dados Invalidos"));
     }
+
+    @PutMapping("/usuarios/{id}")
+    public ResponseEntity<?> alterarDados(@RequestBody Cliente dadosAlterados, @PathVariable Integer id) {
+        if (service.recuperarPorIdDoUsuario(id) == null) {
+            return ResponseEntity.status(404).body(new Messages(404, "Usuário não encontrado"));
+        }
+
+        dadosAlterados.setId(id);
+
+        Cliente alteracoesCliente = service.alterarDadosCliente(dadosAlterados, id);
+        if (alteracoesCliente != null) {
+            return ResponseEntity.ok(alteracoesCliente);
+        }
+        return ResponseEntity.badRequest().body(new Messages(400, "Dados invalidos para atualizacao"));
+    }
+
+    @DeleteMapping("/usuarios/{id}")
+    public ResponseEntity<?> deletarPedido(@PathVariable Integer id) {
+        if (service.recuperarPorIdDoUsuario(id) == null) {
+            return ResponseEntity.status(404).body(new Messages(404, "Usuário não encontrado"));
+        }
+
+        if (service.deletarCliente(id)) {
+            return ResponseEntity.ok(new Messages(200, "Usuário deletado com sucesso"));
+        }
+        return ResponseEntity.badRequest().body(new Messages(400, "Erro ao deletar usuário"));
+    }
 }
 

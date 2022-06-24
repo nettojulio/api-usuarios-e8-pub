@@ -35,4 +35,24 @@ public class ClienteService implements IClienteService {
         }
         return null;
     }
+
+    @Override
+    public Cliente alterarDadosCliente(Cliente dadosAlterados, Integer id) {
+        try {
+            return dao.save(dadosAlterados);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public Boolean deletarCliente(Integer id) {
+        try {
+            dao.deleteById(Integer.parseInt(String.valueOf(id)));
+            return true;
+        } catch (Exception ex) {
+            return false;
+        }
+    }
 }

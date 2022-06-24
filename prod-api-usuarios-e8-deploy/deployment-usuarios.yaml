@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-deployment
+  namespace: grupo-08-prod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-usuarios-e8
+  template:
+    metadata:
+      labels:
+        app: api-usuarios-e8
+    spec:
+      containers:
+        - name: api-usuarios-e8
+          image: nettojulio/api-usuarios-e8:stable
+          env:
+            - name: RDS_HOSTNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: config-map-api-usuarios-e8
+                  key: RDS_HOSTNAME
+            - name: RDS_PORT
+              value: "5432"
+            - name: RDS_USERS_DB_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: config-map-api-usuarios-e8
+                  key: RDS_USERS_DB_NAME
+            - name: RDS_USERNAME
+              valueFrom:
+                configMapKeyRef:
+                  name: config-map-api-usuarios-e8
+                  key: RDS_USERNAME
+            - name: RDS_PASSWORD
+              valueFrom: 
+                secretKeyRef:
+                  name: secret-api-usuarios-e8
+                  key: RDS_PASSWORD
+            - name: URL_ADMIN_AUTH_API
+              valueFrom:
+                configMapKeyRef:
+                  name: config-map-api-usuarios-e8
+                  key: URL_ADMIN_AUTH_API
+          ports:
+            - containerPort: 8082
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "0.25"
+            limits:
+              memory: "512Mi"
+              cpu: "0.5"

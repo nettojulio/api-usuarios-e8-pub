@@ -1,0 +1,24 @@
+- hosts: all
+  tasks:
+    - name: "Upload Files"
+      copy:
+        src: "prod-api-usuarios-e8-deploy"
+        dest: "/home/ubuntu/grupo08/"
+
+    - name: "Apply secret-usuarios.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-usuarios-e8-deploy/secret-usuarios.yaml -n grupo-08-prod
+
+    - name: "Apply configmap-usuarios.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-usuarios-e8-deploy/configmap-usuarios.yaml -n grupo-08-prod
+
+    - name: "Apply loadbalancer-usuarios.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-usuarios-e8-deploy/loadbalancer-usuarios.yaml -n grupo-08-prod
+
+    - name: "Apply clusterip-usuarios.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-usuarios-e8-deploy/clusterip-usuarios.yaml -n grupo-08-prod
+
+    - name: "Apply deployment-usuarios.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-usuarios-e8-deploy/deployment-usuarios.yaml -n grupo-08-prod
+
+    - name: "Apply hpa-usuarios.yaml"
+      shell: kubectl apply -f /home/ubuntu/grupo08/prod-api-usuarios-e8-deploy/hpa-usuarios.yaml -n grupo-08-prod

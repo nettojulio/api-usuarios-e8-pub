@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-api-usuarios-e8
+spec:
+  type: NodePort
+  ports:
+    - port: 8082
+      nodePort: 30102
+  selector:
+    app: api-usuarios-e8
