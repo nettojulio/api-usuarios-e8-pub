@@ -5,11 +5,13 @@
 Uma aplicação Java API para cadastrar e listar usuários com os atributos id, nome, CPF, telefone, data de nascimento e
 email. Para utilizar esta API, esta aplicação deverá ser autenticada pela aplicação de administradores, passando o token jwt.
 
-Repositório do Front-end, clique aqui: https://github.com/equipe8-final-ilab/frontend-e8
+Repositório do Front-end, clique aqui: https://gitlab.com/e8-ilab/desafio-modulo-02/frontend-e8
 
-Repositório da API de administradores: https://github.com/equipe8-final-ilab/api-administrador-e8
+Repositório da API de administradores: https://gitlab.com/e8-ilab/desafio-modulo-02/api-administrador-e8
 
-Repositório da API de pedidos: https://github.com/equipe8-final-ilab/api-pedidos-e8
+Repositório da API de pedidos: https://gitlab.com/e8-ilab/desafio-modulo-02/api-pedidos-e8
+
+Repositório do SES SQS Consumer: https://gitlab.com/e8-ilab/desafio-modulo-02/ses-sqs-consumer
 
 Link do Jira: https://grupo8ilab.atlassian.net/jira/software/projects/G8ILAB/boards/2/roadmap
 
